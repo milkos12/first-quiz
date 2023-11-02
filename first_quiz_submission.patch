@@ -1,0 +1,98 @@
+diff --git a/part1/question1.py b/part1/question1.py
+index 5c99fdb..bf9c362 100644
+--- a/part1/question1.py
++++ b/part1/question1.py
+@@ -20,6 +20,9 @@ def get_city_temperature(city):
+       return 17
+    if city == "San Francisco":
+       return 16
++   if city == "New York":
++      return 14
++   return "not have information"
+ 
+ def get_city_weather(city):
+ 
+@@ -29,6 +32,10 @@ def get_city_weather(city):
+      sky_condition = "cloudy"
+   elif city == "New York":
+      sky_condition = "rainy"
++  elif city == "Quito":
++     sky_condition = "sunny"
++  else:
++     sky_condition = "not have information"
+ 
+   temperature = get_city_temperature(city)
+ 
+diff --git a/part1/question2.py b/part1/question2.py
+index 34a9b01..3fd66f1 100644
+--- a/part1/question2.py
++++ b/part1/question2.py
+@@ -15,7 +15,12 @@
+ # it. As always, there is a test suite that checks the result. It is in 
+ # `question2_test.py.`
+ 
+-swapper = None
+ 
++# The `swapper` function reverses the order of the elements in a tuple.
++def swapper(t):
++    return t[1], t[0]
++
++
++# `run_swapper` applies `swapper` to a list of tuples.
+ def run_swapper(list_of_tuples):
+   return list(map(swapper, list_of_tuples))
+\ No newline at end of file
+diff --git a/part1/question3.py b/part1/question3.py
+index 04fab99..1f442fb 100644
+--- a/part1/question3.py
++++ b/part1/question3.py
+@@ -25,9 +25,37 @@
+ # The `alchemy_combine()` function will use your oven. You can see the expected 
+ # formulas and their outputs in the test file, `question3_test.py`.
+ 
+-# This function should return an oven instance!
++class MagicalOven:
++    def __init__(self):
++        self.items = []
++        self.temperature = 0  # Default temperature
++        
++    
++    def add(self, item):
++        self.items.append(item)
++        
++    def freeze(self):
++        self.temperature = -10
++        
++    def boil(self):
++        self.temperature = 100
++        
++    def wait(self):
++        self.temperature = 0
++        
++    def get_output(self):
++        # Combining items based on temperature and ingredients
++        if set(self.items) == {"lead", "mercury"} and self.temperature >= 100:
++            return "gold"
++        elif set(self.items) == {"water", "air"} and self.temperature < 0:
++            return "snow"
++        elif set(self.items) == {"cheese", "dough", "tomato"} and self.temperature >= 100:
++            return "pizza"
++        else:
++            return "unknown"  # Default output for unknown combinations
++
+ def make_oven():
+-  None
++    return MagicalOven()
+ 
+ def alchemy_combine(oven, ingredients, temperature):
+   
+diff --git a/part1/question3_test.py b/part1/question3_test.py
+index 6cb6c89..0dee4e2 100644
+--- a/part1/question3_test.py
++++ b/part1/question3_test.py
+@@ -1,3 +1,5 @@
++from question3 import make_oven, alchemy_combine
++
+ def test_alchemy_combine():
+ 
+   assert alchemy_combine(

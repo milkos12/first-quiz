@@ -15,7 +15,12 @@
 # it. As always, there is a test suite that checks the result. It is in 
 # `question2_test.py.`
 
-swapper = None
 
+# The `swapper` function reverses the order of the elements in a tuple.
+def swapper(t):
+    return t[1], t[0]
+
+
+# `run_swapper` applies `swapper` to a list of tuples.
 def run_swapper(list_of_tuples):
   return list(map(swapper, list_of_tuples))
