@@ -21,12 +21,12 @@ TABLE_SCHEMA = """
 
 ANIMALS = [
   (1, "petey", "gray whale", 38),
-  (2, "leyla", "gray whale", 43),
-  (3, "thommy", "giant parrot", 21),
-  (4, "ricky", "lobster", 5),
-  (5, "martin", "cow", 12),
+  (2, "leyla", "gray whale", 43),#
+  (3, "thommy", "giant parrot", 21),#
+  (4, "ricky", "lobster", 5),#
+  (5, "martin", "cow", 12),#
   (6, "shannon", "cow", 14),
-  (7, "randolph", "lemur", 67),
+  (7, "randolph", "lemur", 67),#
 ]
 
 PEOPLE = [
@@ -36,12 +36,12 @@ PEOPLE = [
 ]
 
 PEOPLE_ANIMALS = [
-  (1, 4), # scott, ricky
-  (2, 4),  # bessie, ricky
-  (2, 2), # bessie, leyla
-  (2, 7), # bessie, randolph
-  (3, 3),  # karen, thommy
-  (3, 5),  # karen, martin
+  (1, 4), # scott, ricky    23    5
+  (2, 4),  # bessie, ricky  22    5
+  (2, 2), # bessie, leyla   22    43
+  (2, 7), # bessie, randolph22    67
+  (3, 3),  # karen, thommy  27    21
+  (3, 5),  # karen, martin  27    12
 ]
 
 ###

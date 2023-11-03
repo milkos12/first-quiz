@@ -1,3 +1,6 @@
+diff --git a/first_quiz_submission.patch b/first_quiz_submission.patch
+new file mode 100644
+index 0000000..e69de29
 diff --git a/part1/question1.py b/part1/question1.py
 index 5c99fdb..bf9c362 100644
 --- a/part1/question1.py
@@ -96,3 +99,7 @@ index 6cb6c89..0dee4e2 100644
  def test_alchemy_combine():
  
    assert alchemy_combine(
+diff --git a/part1/quiz_pets b/part1/quiz_pets
+new file mode 100644
+index 0000000..e429998
+Binary files /dev/null and b/part1/quiz_pets differ
