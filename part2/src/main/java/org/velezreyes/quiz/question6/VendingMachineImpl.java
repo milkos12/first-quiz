@@ -58,7 +58,7 @@ public class VendingMachineImpl implements VendingMachine {
 
       @Override
       public boolean isFizzy() {
-        // Example fizzy check
+        // Fizzy check
         return name.contains("Cola");
       }
 
