@@ -20,7 +20,7 @@ public class Question6Test {
     VendingMachine vm = VendingMachineImpl.getInstance();
     assertNotNull(vm);
   }
-
+  
   @Test
   public void drinkNotFree() {
     VendingMachine vm = VendingMachineImpl.getInstance();
@@ -29,6 +29,8 @@ public class Question6Test {
       vm.pressButton("ScottCola");
     });
   }
+
+
 
   @Test
   public void canGetScottColaFor75Cents() throws Exception {
@@ -43,7 +45,6 @@ public class Question6Test {
     assertTrue(drink.isFizzy());
     assertEquals(drink.getName(), "ScottCola");
   }
-
   public void machineResets() throws Exception {
     VendingMachine vm = VendingMachineImpl.getInstance();
 
@@ -58,6 +59,7 @@ public class Question6Test {
       vm.pressButton("ScottCola");
     });
   }
+
 
   @Test
   public void canGetKarenTeaForOneDollar() throws Exception {
@@ -78,7 +80,7 @@ public class Question6Test {
     assertFalse(drink.isFizzy());
     assertEquals(drink.getName(), "KarenTea");
   }
-
+ 
   @Test
   public void otherDrinksUnknown() throws Exception {
     VendingMachine vm = VendingMachineImpl.getInstance();
